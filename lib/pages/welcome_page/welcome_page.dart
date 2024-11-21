@@ -23,8 +23,7 @@ class _WelcomePageState extends State<WelcomePage> {
               width: double.infinity,
               decoration: const BoxDecoration(color: Colors.white),
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 24, vertical: 56),
+                padding: const EdgeInsets.fromLTRB(24, 56, 24, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
