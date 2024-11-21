@@ -1,4 +1,4 @@
-import "package:ecommerce_fruits/homepage.dart";
+import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
 import "package:flutter/material.dart";
 
 void main() {
@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: "Ecommerce Fruits",
       theme: ThemeData(
+        fontFamily: 'BricolageGrotesque',
         primaryColor: const Color(0xFFFFA451),
         scaffoldBackgroundColor: const Color(0xFFFFA451),
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -23,7 +24,10 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const HomePage(),
+      initialRoute: WelcomePage.routeName,
+      routes: {
+        WelcomePage.routeName: (context) => const WelcomePage(),
+      },
     );
   }
 }
