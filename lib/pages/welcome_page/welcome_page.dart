@@ -15,8 +15,33 @@ class _WelcomePageState extends State<WelcomePage> {
     return Scaffold(
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 0.6 * screenSize.height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                SizedBox(
+                  height: (260 / 812) * screenSize.height,
+                  width: (301 / 375) * screenSize.width,
+                  child: Image.asset(
+                    "assets/images/welcome_page.png",
+                  ),
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+                ClipOval(
+                  child: Container(
+                    height: (12 / 812) * screenSize.height,
+                    width: (301 / 375) * screenSize.width,
+                    decoration: const BoxDecoration(color: Color(0xFFF08626)),
+                  ),
+                ),
+                const SizedBox(
+                  height: 32,
+                )
+              ],
+            ),
           ),
           Expanded(
             child: Container(
