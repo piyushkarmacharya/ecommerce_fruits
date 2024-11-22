@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/authentication_page/authentication_page.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatefulWidget {
@@ -48,8 +49,9 @@ class _WelcomePageState extends State<WelcomePage> {
               width: double.infinity,
               decoration: const BoxDecoration(color: Colors.white),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 56, 24, 0),
+                padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
@@ -77,7 +79,10 @@ class _WelcomePageState extends State<WelcomePage> {
                       width: double.infinity,
                       height: 56,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(AuthenticationPage.routeName);
+                          },
                           child: const Text("Let's Continue",
                               style: TextStyle(color: Colors.white))),
                     ),

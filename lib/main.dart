@@ -1,3 +1,4 @@
+import "package:ecommerce_fruits/pages/authentication_page/authentication_page.dart";
 import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
 import "package:flutter/material.dart";
 
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
       initialRoute: WelcomePage.routeName,
       routes: {
         WelcomePage.routeName: (context) => const WelcomePage(),
+        AuthenticationPage.routeName: (context) => const AuthenticationPage(),
       },
     );
   }
