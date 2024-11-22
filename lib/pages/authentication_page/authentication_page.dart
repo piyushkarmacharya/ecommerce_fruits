@@ -1,5 +1,4 @@
 import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
-import 'package:ecommerce_fruits/pages/welcome_page/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticationPage extends StatefulWidget {
@@ -11,7 +10,7 @@ class AuthenticationPage extends StatefulWidget {
 }
 
 class _AuthenticationPageState extends State<AuthenticationPage> {
-  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   OutlineInputBorder borderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
@@ -96,7 +95,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                                 },
                                 decoration: InputDecoration(
                                     errorMaxLines: 1,
-                                    contentPadding: EdgeInsets.symmetric(
+                                    contentPadding: const EdgeInsets.symmetric(
                                       vertical:
                                           10, // Adjust vertical padding for text
                                       horizontal:

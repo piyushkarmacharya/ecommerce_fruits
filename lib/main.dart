@@ -1,5 +1,6 @@
 import "package:ecommerce_fruits/pages/authentication_page/authentication_page.dart";
 import "package:ecommerce_fruits/pages/home_screen/home_screen.dart";
+import "package:ecommerce_fruits/pages/splash_screen.dart";
 import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
 import "package:flutter/material.dart";
 
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: WelcomePage.routeName,
+      initialRoute: SplashScreen.routeName,
       routes: {
+        SplashScreen.routeName: (context) => const SplashScreen(),
         WelcomePage.routeName: (context) => const WelcomePage(),
         AuthenticationPage.routeName: (context) => const AuthenticationPage(),
         HomeScreen.routeName: (context) => const HomeScreen(),
