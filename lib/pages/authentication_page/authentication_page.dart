@@ -11,6 +11,7 @@ class AuthenticationPage extends StatefulWidget {
 
 class _AuthenticationPageState extends State<AuthenticationPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  TextEditingController nameCtr = TextEditingController();
   OutlineInputBorder borderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
@@ -83,32 +84,31 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(bottom: 32, top: 8),
-                            child: SizedBox(
-                              height: 56,
-                              width: double.infinity,
-                              child: TextFormField(
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return "Enter your first name";
-                                  }
-                                  return null;
-                                },
-                                decoration: InputDecoration(
-                                    errorMaxLines: 1,
-                                    contentPadding: const EdgeInsets.symmetric(
-                                      vertical:
-                                          10, // Adjust vertical padding for text
-                                      horizontal:
-                                          12, // Adjust horizontal padding
-                                    ),
-                                    hintText: "first name",
-                                    filled: true,
-                                    fillColor: const Color(0xFFF3F1F1),
-                                    focusedBorder: borderStyle,
-                                    enabledBorder: borderStyle,
-                                    border: borderStyle,
-                                    errorBorder: borderStyle),
-                              ),
+                            child: TextFormField(
+                              style: const TextStyle(fontSize: 20),
+                              controller: nameCtr,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return "Enter your first name";
+                                }
+                                return null;
+                              },
+                              decoration: InputDecoration(
+                                  errorMaxLines: 1,
+                                  contentPadding: const EdgeInsets.symmetric(
+                                    vertical:
+                                        18, // Adjust vertical padding for text
+                                    horizontal: 16, // Adjust horizontal padding
+                                  ),
+                                  hintText: "first name",
+                                  hintStyle:
+                                      const TextStyle(color: Color(0xFFC2BDBD)),
+                                  filled: true,
+                                  fillColor: const Color(0xFFF3F1F1),
+                                  focusedBorder: borderStyle,
+                                  enabledBorder: borderStyle,
+                                  border: borderStyle,
+                                  errorBorder: borderStyle),
                             ),
                           ),
                           SizedBox(
@@ -117,8 +117,9 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                             child: ElevatedButton(
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
-                                    Navigator.of(context)
-                                        .pushNamed(HomeScreen.routeName);
+                                    Navigator.of(context).pushNamed(
+                                        HomeScreen.routeName,
+                                        arguments: {'name': nameCtr.text});
                                   }
                                 },
                                 child: const Text("Start Ordering",
