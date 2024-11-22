@@ -1,3 +1,5 @@
+import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
+import 'package:ecommerce_fruits/pages/welcome_page/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class AuthenticationPage extends StatefulWidget {
@@ -9,6 +11,7 @@ class AuthenticationPage extends StatefulWidget {
 }
 
 class _AuthenticationPageState extends State<AuthenticationPage> {
+  GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   OutlineInputBorder borderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
@@ -66,7 +69,7 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                     const Padding(
                       padding: EdgeInsets.only(bottom: 8),
                       child: Text(
-                        "What is your firstname",
+                        "What is your firstname?",
                         style: TextStyle(
                             color: Color(0xFF27214D),
                             fontSize: 20,
@@ -74,28 +77,56 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                             letterSpacing: -1),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 32, top: 8),
-                      child: SizedBox(
-                          height: 56,
-                          width: double.infinity,
-                          child: TextField(
-                            decoration: InputDecoration(
-                                hintText: "first name",
-                                filled: true,
-                                fillColor: const Color(0xFFF3F1F1),
-                                focusedBorder: borderStyle,
-                                enabledBorder: borderStyle,
-                                border: borderStyle),
-                          )),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 56,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          child: const Text("Start Ordering",
-                              style: TextStyle(color: Colors.white))),
+                    Form(
+                      key: _formKey,
+                      autovalidateMode: AutovalidateMode.always,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 32, top: 8),
+                            child: SizedBox(
+                              height: 56,
+                              width: double.infinity,
+                              child: TextFormField(
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "Enter your first name";
+                                  }
+                                  return null;
+                                },
+                                decoration: InputDecoration(
+                                    errorMaxLines: 1,
+                                    contentPadding: EdgeInsets.symmetric(
+                                      vertical:
+                                          10, // Adjust vertical padding for text
+                                      horizontal:
+                                          12, // Adjust horizontal padding
+                                    ),
+                                    hintText: "first name",
+                                    filled: true,
+                                    fillColor: const Color(0xFFF3F1F1),
+                                    focusedBorder: borderStyle,
+                                    enabledBorder: borderStyle,
+                                    border: borderStyle,
+                                    errorBorder: borderStyle),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: double.infinity,
+                            height: 56,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    Navigator.of(context)
+                                        .pushNamed(HomeScreen.routeName);
+                                  }
+                                },
+                                child: const Text("Start Ordering",
+                                    style: TextStyle(color: Colors.white))),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
