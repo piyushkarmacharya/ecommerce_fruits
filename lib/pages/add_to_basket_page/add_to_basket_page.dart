@@ -204,7 +204,7 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                 children: [
                   SizedBox(
                     child: CircleAvatar(
-                      radius: 24,
+                      radius: 0.035 * screenSize.height,
                       backgroundColor: const Color(0xFFFFA451).withOpacity(0.2),
                       foregroundColor: const Color(0xFFFFA451),
                       child: const Icon(
@@ -218,7 +218,11 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                       height: 0.07 * screenSize.height,
                       child: ElevatedButton(
                           onPressed: () {},
-                          child: const Text("Add to basket"))),
+                          child: const Text(
+                            "Add to basket",
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF), fontSize: 16),
+                          ))),
                 ],
               ),
             ),
