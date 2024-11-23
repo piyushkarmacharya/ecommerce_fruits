@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/basket_page/basket_page.dart';
 import 'package:ecommerce_fruits/pages/home_screen/components/combo_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -123,7 +124,9 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(BasketPage.routeName);
+                },
                 icon: SvgPicture.asset(
                   "assets/icons/basket.svg",
                 )),
