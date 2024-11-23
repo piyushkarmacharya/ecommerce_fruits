@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 
 class ComboCard extends StatefulWidget {
   final Map<String, String> data;
-  const ComboCard({super.key, required this.data});
+  final bool sizeBig;
+  final int index;
+  const ComboCard(
+      {super.key,
+      required this.data,
+      required this.sizeBig,
+      required this.index});
 
   @override
   State<ComboCard> createState() => _ComboCardState();
@@ -14,13 +20,20 @@ class _ComboCardState extends State<ComboCard> {
     final data = widget.data;
     final screenSize = MediaQuery.of(context).size;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 16, 8, 16),
+      padding: EdgeInsets.fromLTRB(0, 16, 8, widget.sizeBig ? 16 : 0),
       child: Card(
         elevation: 5,
         child: Container(
           decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(16)),
-          width: 0.45 * screenSize.width,
+              color: widget.sizeBig
+                  ? Colors.white
+                  : (widget.index % 2 == 0
+                      ? const Color(0xFFFFA451).withOpacity(0.05)
+                      : const Color(0xFFF1EFF6).withOpacity(0.05)),
+              borderRadius: BorderRadius.circular(16)),
+          width: widget.sizeBig
+              ? 0.45 * screenSize.width
+              : 0.43 * screenSize.width,
           child: GridTile(
             header: GridTileBar(
               title: const Text(""),
@@ -39,7 +52,8 @@ class _ComboCardState extends State<ComboCard> {
             footer: GridTileBar(
               title: const Text(""), //keep this to align traling to right side
               trailing: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 8.0, 16),
+                padding:
+                    EdgeInsets.fromLTRB(0, 0, 8.0, widget.sizeBig ? 16 : 8),
                 child: GestureDetector(
                   onTap: () {},
                   child: ClipOval(
