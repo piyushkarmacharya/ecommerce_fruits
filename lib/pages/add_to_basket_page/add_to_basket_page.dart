@@ -29,7 +29,7 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                 color: const Color(0xFFFFFFFF),
                 borderRadius: BorderRadius.circular(100)),
             child: const Padding(
-              padding: EdgeInsets.all(7.0),
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 8),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
