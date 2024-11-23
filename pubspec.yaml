@@ -70,6 +70,7 @@ flutter:
     - assets/icons/filter.svg
     - assets/images/Honey_lime_combo.png
     - assets/images/Berry_mango_combo.png
+    - assets/images/complete.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

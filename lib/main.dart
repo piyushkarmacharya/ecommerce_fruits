@@ -2,6 +2,7 @@ import "package:ecommerce_fruits/pages/add_to_basket_page/add_to_basket_page.dar
 import "package:ecommerce_fruits/pages/authentication_page/authentication_page.dart";
 import "package:ecommerce_fruits/pages/basket_page/basket_page.dart";
 import "package:ecommerce_fruits/pages/home_screen/home_screen.dart";
+import "package:ecommerce_fruits/pages/order_complete_page.dart/order_complete_page.dart";
 import "package:ecommerce_fruits/pages/splash_screen.dart";
 import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
 import "package:flutter/material.dart";
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => const HomeScreen(),
         AddToBasketPage.routeName: (context) => const AddToBasketPage(),
         BasketPage.routeName: (context) => const BasketPage(),
+        OrderCompletePage.routeName: (context) => const OrderCompletePage(),
       },
     );
   }

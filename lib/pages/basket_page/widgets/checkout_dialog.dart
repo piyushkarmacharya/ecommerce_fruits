@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/order_complete_page.dart/order_complete_page.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutDialog extends StatefulWidget {
@@ -142,7 +143,10 @@ class _CheckoutDialogState extends State<CheckoutDialog> {
                                                 color: Theme.of(context)
                                                     .primaryColor))),
                                     onPressed: () {
-                                      if (formKey.currentState!.validate()) {}
+                                      if (formKey.currentState!.validate()) {
+                                        Navigator.of(context).pushNamed(
+                                            OrderCompletePage.routeName);
+                                      }
                                     },
                                     child: Text(
                                       "Pay on delivery",
@@ -164,7 +168,9 @@ class _CheckoutDialogState extends State<CheckoutDialog> {
                                           side: BorderSide(
                                               color: Theme.of(context)
                                                   .primaryColor))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    if (formKey.currentState!.validate()) {}
+                                  },
                                   child: Text(
                                     "Pay with card",
                                     style: TextStyle(

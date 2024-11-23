@@ -242,7 +242,7 @@ class _BasketPageState extends State<BasketPage> {
                             showDialog(
                               context: context,
                               builder: (context) {
-                                return CheckoutDialog();
+                                return const CheckoutDialog();
                               },
                             );
                           },
