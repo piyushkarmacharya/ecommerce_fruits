@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/add_to_basket_page/add_to_basket_page.dart';
 import 'package:flutter/material.dart';
 
 class ComboCard extends StatefulWidget {
@@ -55,7 +56,10 @@ class _ComboCardState extends State<ComboCard> {
                 padding:
                     EdgeInsets.fromLTRB(0, 0, 8.0, widget.sizeBig ? 16 : 8),
                 child: GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.of(context)
+                        .pushNamed(AddToBasketPage.routeName, arguments: data);
+                  },
                   child: ClipOval(
                     child: Container(
                       color: const Color(0xFFFFA451).withOpacity(0.2),

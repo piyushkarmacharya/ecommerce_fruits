@@ -15,27 +15,47 @@ class _HomeScreenState extends State<HomeScreen> {
     {
       "name": "Honey lime combo",
       "price": "2,000",
-      "image": "assets/images/Honey_lime_combo.png"
+      "image": "assets/images/Honey_lime_combo.png",
+      "contains":
+          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+      "message":
+          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
     },
     {
       "name": "Berry mango combo",
       "price": "8,000",
-      "image": "assets/images/Berry_mango_combo.png"
+      "image": "assets/images/Berry_mango_combo.png",
+      "contains":
+          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+      "message":
+          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
     },
     {
       "name": "Honey lime combo",
       "price": "2,000",
-      "image": "assets/images/Honey_lime_combo.png"
+      "image": "assets/images/Honey_lime_combo.png",
+      "contains":
+          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+      "message":
+          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
     },
     {
       "name": "Berry mango combo",
       "price": "8,000",
-      "image": "assets/images/Berry_mango_combo.png"
+      "image": "assets/images/Berry_mango_combo.png",
+      "contains":
+          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+      "message":
+          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
     },
     {
       "name": "Berry mango combo",
       "price": "8,000",
-      "image": "assets/images/Berry_mango_combo.png"
+      "image": "assets/images/Berry_mango_combo.png",
+      "contains":
+          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+      "message":
+          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
     }
   ];
   final TextStyle _unselectedStyle = const TextStyle(
