@@ -1,15 +1,17 @@
+import 'package:ecommerce_fruits/main.dart';
 import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AuthenticationPage extends StatefulWidget {
+class AuthenticationPage extends ConsumerStatefulWidget {
   static String routeName = "/authentication_page";
   const AuthenticationPage({super.key});
 
   @override
-  State<AuthenticationPage> createState() => _AuthenticationPageState();
+  ConsumerState<AuthenticationPage> createState() => _AuthenticationPageState();
 }
 
-class _AuthenticationPageState extends State<AuthenticationPage> {
+class _AuthenticationPageState extends ConsumerState<AuthenticationPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController nameCtr = TextEditingController();
   OutlineInputBorder borderStyle = OutlineInputBorder(
@@ -18,6 +20,10 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
       color: Color(0xFFF3F1F1),
     ),
   );
+  void updateState() {
+    ref.read(userProvider.notifier).updateName(nameCtr.text);
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool keyboardActive = MediaQuery.of(context).viewInsets.bottom > 0;
@@ -117,9 +123,10 @@ class _AuthenticationPageState extends State<AuthenticationPage> {
                             child: ElevatedButton(
                                 onPressed: () {
                                   if (_formKey.currentState!.validate()) {
+                                    updateState();
                                     Navigator.of(context).pushNamed(
-                                        HomeScreen.routeName,
-                                        arguments: {'name': nameCtr.text});
+                                      HomeScreen.routeName,
+                                    );
                                   }
                                 },
                                 child: const Text("Start Ordering",

@@ -1,17 +1,19 @@
+import 'package:ecommerce_fruits/main.dart';
 import 'package:ecommerce_fruits/pages/basket_page/basket_page.dart';
 import 'package:ecommerce_fruits/pages/home_screen/components/combo_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends ConsumerStatefulWidget {
   static String routeName = "/home-screen";
   const HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeScreen> {
   final List<Map<String, String>> combo = [
     {
       "name": "Honey lime combo",
@@ -113,8 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    final name = (ModalRoute.of(context)!.settings.arguments
-        as Map<String, String>)['name'];
+    final name = ref.watch(userProvider);
     return Scaffold(
       backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(

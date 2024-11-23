@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class OrderCompletePage extends StatefulWidget {
@@ -53,7 +54,10 @@ class _OrderCompletePageState extends State<OrderCompletePage> {
                           borderRadius: BorderRadius.circular(10),
                           side: BorderSide(
                               color: Theme.of(context).primaryColor))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context)
+                        .pushReplacementNamed(HomeScreen.routeName);
+                  },
                   child: Text(
                     "Continue shopping",
                     style: TextStyle(

@@ -5,11 +5,16 @@ import "package:ecommerce_fruits/pages/home_screen/home_screen.dart";
 import "package:ecommerce_fruits/pages/order_complete_page.dart/order_complete_page.dart";
 import "package:ecommerce_fruits/pages/splash_screen.dart";
 import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
+import "package:ecommerce_fruits/user_notifier.dart";
 import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
+
+final userProvider =
+    StateNotifierProvider<UserNotifier, String>((ref) => UserNotifier("User"));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
