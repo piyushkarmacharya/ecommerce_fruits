@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/basket_page/widgets/checkout_dialog.dart';
 import 'package:flutter/material.dart';
 
 class BasketPage extends StatefulWidget {
@@ -9,6 +10,12 @@ class BasketPage extends StatefulWidget {
 }
 
 class _BasketPageState extends State<BasketPage> {
+  OutlineInputBorder borderStyle = OutlineInputBorder(
+    borderRadius: BorderRadius.circular(10),
+    borderSide: const BorderSide(
+      color: Color(0xFFF3F1F1),
+    ),
+  );
   final List<Map<String, String>> basket = [
     {
       "name": "Honey lime combo",
@@ -231,7 +238,14 @@ class _BasketPageState extends State<BasketPage> {
                         child: SizedBox(
                       height: 0.07 * screenSize.height,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return CheckoutDialog();
+                              },
+                            );
+                          },
                           child: const Text(
                             "Checkout",
                             style: TextStyle(
