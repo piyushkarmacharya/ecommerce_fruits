@@ -1,3 +1,4 @@
+import 'package:ecommerce_fruits/pages/basket_page/basket_page.dart';
 import 'package:flutter/material.dart';
 
 class AddToBasketPage extends StatefulWidget {
@@ -17,7 +18,7 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
         (ModalRoute.of(context)!.settings.arguments) as Map<String, String>;
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 70,
+        toolbarHeight: 100,
         automaticallyImplyLeading: false,
         backgroundColor: const Color(0xFFFFA451),
         title: GestureDetector(
@@ -217,7 +218,10 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                       width: 0.6 * screenSize.width,
                       height: 0.07 * screenSize.height,
                       child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(BasketPage.routeName);
+                          },
                           child: const Text(
                             "Add to basket",
                             style: TextStyle(

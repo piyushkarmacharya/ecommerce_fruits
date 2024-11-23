@@ -1,5 +1,6 @@
 import "package:ecommerce_fruits/pages/add_to_basket_page/add_to_basket_page.dart";
 import "package:ecommerce_fruits/pages/authentication_page/authentication_page.dart";
+import "package:ecommerce_fruits/pages/basket_page/basket_page.dart";
 import "package:ecommerce_fruits/pages/home_screen/home_screen.dart";
 import "package:ecommerce_fruits/pages/splash_screen.dart";
 import "package:ecommerce_fruits/pages/welcome_page/welcome_page.dart";
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
         AuthenticationPage.routeName: (context) => const AuthenticationPage(),
         HomeScreen.routeName: (context) => const HomeScreen(),
         AddToBasketPage.routeName: (context) => const AddToBasketPage(),
+        BasketPage.routeName: (context) => const BasketPage(),
       },
     );
   }
