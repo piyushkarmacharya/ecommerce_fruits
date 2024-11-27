@@ -1,4 +1,5 @@
 import 'package:ecommerce_fruits/pages/basket_page/widgets/checkout_dialog.dart';
+import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
 class BasketPage extends StatefulWidget {
@@ -18,46 +19,6 @@ class _BasketPageState extends State<BasketPage> {
   );
   final List<Map<String, String>> basket = [
     {
-      "name": "Honey lime combo",
-      "price": "2000",
-      "image": "assets/images/Honey_lime_combo.png",
-      "quantity": "2",
-      "contains":
-          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
-      "message":
-          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    },
-    {
-      "name": "Berry mango combo",
-      "price": "8000",
-      "quantity": "1",
-      "image": "assets/images/Berry_mango_combo.png",
-      "contains":
-          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
-      "message":
-          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    },
-    {
-      "name": "Honey lime combo",
-      "price": "2000",
-      "quantity": "3",
-      "image": "assets/images/Honey_lime_combo.png",
-      "contains":
-          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
-      "message":
-          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    },
-    {
-      "name": "Berry mango combo",
-      "price": "8000",
-      "quantity": "1",
-      "image": "assets/images/Berry_mango_combo.png",
-      "contains":
-          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
-      "message":
-          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    },
-    {
       "name": "Berry mango combo",
       "price": "8000",
       "quantity": "2",
@@ -66,7 +27,7 @@ class _BasketPageState extends State<BasketPage> {
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
       "message":
           "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    }
+    },
   ];
 
   int getTotal(List data) {
@@ -90,7 +51,8 @@ class _BasketPageState extends State<BasketPage> {
           children: [
             GestureDetector(
               onTap: () {
-                Navigator.of(context).pop();
+                Navigator.of(context)
+                    .pushReplacementNamed(HomeScreen.routeName);
               },
               child: Container(
                 decoration: BoxDecoration(

@@ -1,16 +1,42 @@
-# ecommerce_fruits
+# **Ecommerce Fruits**
+A sleek and user-friendly mobile e-commerce application built with **Flutter**. It delivers a seamless shopping experience with efficient features for managing user interactions. The app boasts an intuitive design, smooth navigation, and a highly responsive interface, ensuring an engaging and effortless journey for users.
 
-A new Flutter project.
+## **Features**
+- User-friendly interface
+- Smooth navigation
+- State Management
+- Responsive
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## **Steps to Run the Program**
 
-A few resources to get you started if this is your first Flutter project:
+Follow the steps below to get the project up and running on your local machine:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 1. **Clone the Repository**
+   First, clone the repository to your local machine using the following command: 
+   ```bash
+   git clone https://github.com/piyushkarmacharya/ecommerce_fruits.git
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+### 2. **Navigate to Project Directory**
+Change the directory to the project folder: 
+```bash
+cd ecommerce_fruits
+```
+
+### 3. **Install dependencies**
+To install dependencies run : 
+```bash
+flutter pub get
+```
+
+### 4. **Run the Application**
+```bash
+flutter run
+```
+
+After this command user have to choose a device to run the application.
+   
+   

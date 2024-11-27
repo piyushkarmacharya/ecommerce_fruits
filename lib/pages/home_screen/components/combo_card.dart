@@ -16,6 +16,8 @@ class ComboCard extends StatefulWidget {
 }
 
 class _ComboCardState extends State<ComboCard> {
+  bool favoritee = false;
+
   @override
   Widget build(BuildContext context) {
     final data = widget.data;
@@ -42,10 +44,16 @@ class _ComboCardState extends State<ComboCard> {
               trailing: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GestureDetector(
-                  onTap: () {},
-                  child: const Icon(
-                    Icons.favorite_outline,
-                    color: Color(0xFFFFA451),
+                  onTap: () {
+                    setState(() {
+                      favoritee = !favoritee;
+                    });
+                  },
+                  child: Icon(
+                    favoritee == true
+                        ? Icons.favorite
+                        : Icons.favorite_border_outlined,
+                    color: const Color(0xFFFFA451),
                   ),
                 ),
               ),

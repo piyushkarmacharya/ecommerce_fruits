@@ -10,7 +10,7 @@ class AddToBasketPage extends StatefulWidget {
 }
 
 class _AddToBasketPageState extends State<AddToBasketPage> {
-  final int qty = 1;
+  int qty = 1;
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -96,7 +96,13 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                           Row(
                             children: [
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    if (qty > 0) {
+                                      qty--;
+                                    }
+                                  });
+                                },
                                 icon: const Icon(
                                   Icons.remove_circle_outline_sharp,
                                   size: 32,
@@ -111,7 +117,11 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                                         color: Color(0xFF27214D))),
                               ),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    qty++;
+                                  });
+                                },
                                 icon: CircleAvatar(
                                   radius: 15,
                                   backgroundColor:
