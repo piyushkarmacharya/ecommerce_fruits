@@ -17,7 +17,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
   final List<Map<String, String>> combo = [
     {
       "name": "Honey lime combo",
-      "price": "2,000",
+      "price": "2000",
       "image": "assets/images/Honey_lime_combo.png",
       "contains":
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
@@ -26,7 +26,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     },
     {
       "name": "Berry mango combo",
-      "price": "8,000",
+      "price": "8000",
       "image": "assets/images/Berry_mango_combo.png",
       "contains":
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
@@ -35,7 +35,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     },
     {
       "name": "Honey lime combo",
-      "price": "2,000",
+      "price": "2000",
       "image": "assets/images/Honey_lime_combo.png",
       "contains":
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
@@ -44,7 +44,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     },
     {
       "name": "Berry mango combo",
-      "price": "8,000",
+      "price": "8000",
       "image": "assets/images/Berry_mango_combo.png",
       "contains":
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
@@ -53,7 +53,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     },
     {
       "name": "Berry mango combo",
-      "price": "8,000",
+      "price": "8000",
       "image": "assets/images/Berry_mango_combo.png",
       "contains":
           "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",

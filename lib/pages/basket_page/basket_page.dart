@@ -1,34 +1,36 @@
+import 'package:ecommerce_fruits/main.dart';
 import 'package:ecommerce_fruits/pages/basket_page/widgets/checkout_dialog.dart';
 import 'package:ecommerce_fruits/pages/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BasketPage extends StatefulWidget {
+class BasketPage extends ConsumerStatefulWidget {
   static String routeName = "/basket-page";
   const BasketPage({super.key});
 
   @override
-  State<BasketPage> createState() => _BasketPageState();
+  ConsumerState<BasketPage> createState() => _BasketPageState();
 }
 
-class _BasketPageState extends State<BasketPage> {
+class _BasketPageState extends ConsumerState<BasketPage> {
   OutlineInputBorder borderStyle = OutlineInputBorder(
     borderRadius: BorderRadius.circular(10),
     borderSide: const BorderSide(
       color: Color(0xFFF3F1F1),
     ),
   );
-  final List<Map<String, String>> basket = [
-    {
-      "name": "Berry mango combo",
-      "price": "8000",
-      "quantity": "2",
-      "image": "assets/images/Berry_mango_combo.png",
-      "contains":
-          "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
-      "message":
-          "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
-    },
-  ];
+  // final List<Map<String, String>> basket = [
+  //   {
+  //     "name": "Berry mango combo",
+  //     "price": "8000",
+  //     "quantity": "2",
+  //     "image": "assets/images/Berry_mango_combo.png",
+  //     "contains":
+  //         "Red Quinoa, Lime, Honey, Blueberries, Strawberries, Mango, Fresh mint.",
+  //     "message":
+  //         "If you are looking for a new fruit salad to eat today, quinoa is the perfect brunch for you. make"
+  //   },
+  // ];
 
   int getTotal(List data) {
     int total = 0;
@@ -41,6 +43,7 @@ class _BasketPageState extends State<BasketPage> {
 
   @override
   Widget build(BuildContext context) {
+    final basket = ref.watch(cartProvider);
     final screenSize = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(

@@ -1,16 +1,18 @@
+import 'package:ecommerce_fruits/main.dart';
 import 'package:ecommerce_fruits/pages/basket_page/basket_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class AddToBasketPage extends StatefulWidget {
+class AddToBasketPage extends ConsumerStatefulWidget {
   static String routeName = "/add-to-basket";
   const AddToBasketPage({super.key});
 
   @override
-  State<AddToBasketPage> createState() => _AddToBasketPageState();
+  ConsumerState<AddToBasketPage> createState() => _AddToBasketPageState();
 }
 
-class _AddToBasketPageState extends State<AddToBasketPage> {
-  int qty = 1;
+class _AddToBasketPageState extends ConsumerState<AddToBasketPage> {
+  int qty = 0;
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -229,8 +231,18 @@ class _AddToBasketPageState extends State<AddToBasketPage> {
                       height: 0.07 * screenSize.height,
                       child: ElevatedButton(
                           onPressed: () {
-                            Navigator.of(context)
-                                .pushNamed(BasketPage.routeName);
+                            if (qty != 0) {
+                              data['quantity'] = qty.toString();
+                              ref.read(cartProvider.notifier).addProduct(data);
+                              Navigator.of(context)
+                                  .pushNamed(BasketPage.routeName);
+                            } else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                  content: Text("Quantity is 0"),
+                                ),
+                              );
+                            }
                           },
                           child: const Text(
                             "Add to basket",

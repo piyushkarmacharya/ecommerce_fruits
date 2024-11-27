@@ -1,3 +1,4 @@
+import "package:ecommerce_fruits/cart_notifier.dart";
 import "package:ecommerce_fruits/pages/add_to_basket_page/add_to_basket_page.dart";
 import "package:ecommerce_fruits/pages/authentication_page/authentication_page.dart";
 import "package:ecommerce_fruits/pages/basket_page/basket_page.dart";
@@ -15,6 +16,8 @@ void main() {
 
 final userProvider =
     StateNotifierProvider<UserNotifier, String>((ref) => UserNotifier("User"));
+final cartProvider =
+    StateNotifierProvider<CartNotifier, List<Map>>((ref) => CartNotifier([]));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
