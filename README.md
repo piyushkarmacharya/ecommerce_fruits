@@ -7,6 +7,11 @@ A sleek and user-friendly mobile e-commerce application built with **Flutter**. 
 - State Management
 - Responsive
 
+## **Versions**
+- Flutter 3.24.5
+- Dart 3.5.4
+- DevTools 2.37.3
+
 ---
 
 ## **Steps to Run the Program**
