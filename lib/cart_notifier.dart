@@ -5,4 +5,14 @@ class CartNotifier extends StateNotifier<List<Map>> {
   void addProduct(Map p) {
     state = [...state, p];
   }
+
+  void deleteProduct(int index) {
+    List<Map> temp = [];
+    for (int i = 0; i < state.length; i++) {
+      if (i != index) {
+        temp = [...temp, state[i]];
+      }
+    }
+    state = temp;
+  }
 }

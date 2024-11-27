@@ -152,13 +152,29 @@ class _BasketPageState extends ConsumerState<BasketPage> {
                                     ),
                                   ],
                                 ),
-                                Text(
-                                  "Rs. ${int.parse(data["price"].toString()) * int.parse(data["quantity"].toString())}",
-                                  style: const TextStyle(
-                                      color: Color(0xFF27214D),
-                                      fontSize: 16,
-                                      letterSpacing: -0.5,
-                                      fontWeight: FontWeight.w600),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "Rs. ${int.parse(data["price"].toString()) * int.parse(data["quantity"].toString())}",
+                                      style: const TextStyle(
+                                          color: Color(0xFF27214D),
+                                          fontSize: 16,
+                                          letterSpacing: -0.5,
+                                          fontWeight: FontWeight.w600),
+                                    ),
+                                    IconButton(
+                                        onPressed: () {
+                                          ref
+                                              .read(cartProvider.notifier)
+                                              .deleteProduct(index);
+                                        },
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          color: Colors.red,
+                                          size: 30,
+                                        ))
+                                  ],
                                 )
                               ],
                             ),
